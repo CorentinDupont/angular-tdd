@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 
 import { NgxJsonapiModule } from 'ngx-jsonapi';
+import { AuthorsService } from './authors.service';
+import { BooksService } from './books.service';
+import { PhotosService } from './photos.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { NgxJsonapiModule } from 'ngx-jsonapi';
       url: '//jsonapiplayground.reyesoft.com/v2/'
     }),
   ],
-  providers: [],
+  providers: [ AuthorsService, BooksService, PhotosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

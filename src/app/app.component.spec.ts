@@ -1,16 +1,27 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { AuthorsComponent } from './authors/authors.component';
+import { AuthorsService } from './authors.service';
+import { BooksService } from './books.service';
+import { PhotosService } from './photos.service';
+import { NgxJsonapiModule } from 'ngx-jsonapi';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgxJsonapiModule,
+        NgxJsonapiModule.forRoot({
+          url: '//jsonapiplayground.reyesoft.com/v2/'
+        }),
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        AuthorsComponent,
       ],
+      providers: [ AuthorsService, BooksService, PhotosService],
     }).compileComponents();
   }));
 
