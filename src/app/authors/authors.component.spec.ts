@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorsComponent } from './authors.component';
+import { NgxJsonapiModule } from 'ngx-jsonapi';
+import { AuthorsService } from '../authors.service';
 
 describe('AuthorsComponent', () => {
   let component: AuthorsComponent;
@@ -8,7 +10,11 @@ describe('AuthorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorsComponent ]
+      declarations: [ AuthorsComponent ],
+      imports: [
+        NgxJsonapiModule,
+      ],
+      providers: [AuthorsService],
     })
     .compileComponents();
   }));

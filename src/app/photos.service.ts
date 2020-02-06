@@ -11,7 +11,7 @@ export class Photo extends Resource {
 }
 
 @Injectable()
-@Autoregister()
+// @Autoregister()
 export class PhotosService extends Service<Photo> {
 
   public resource = Photo;

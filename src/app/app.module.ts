@@ -16,8 +16,8 @@ import { NgxJsonapiModule } from 'ngx-jsonapi';
     BrowserModule,
     AppRoutingModule,
     NgxJsonapiModule.forRoot({
-      url: '//jsonapiplayground.reyesoft.com/v2/?include=books,photos'
-    }) ,
+      url: '//jsonapiplayground.reyesoft.com/v2/'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

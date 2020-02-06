@@ -12,7 +12,7 @@ export class Book extends Resource {
 }
 
 @Injectable()
-@Autoregister()
+// @Autoregister()
 export class BooksService extends Service<Book> {
 
   public resource = Book;
