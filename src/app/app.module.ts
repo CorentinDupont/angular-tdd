@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 
+import { NgxJsonapiModule } from 'ngx-jsonapi';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,10 @@ import { AuthorsComponent } from './authors/authors.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxJsonapiModule.forRoot({
+      url: '//jsonapiplayground.reyesoft.com/v2/?include=books,photos'
+    }) ,
   ],
   providers: [],
   bootstrap: [AppComponent]
