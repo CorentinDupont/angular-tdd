@@ -1,4 +1,6 @@
 export const authors = {
+  // tslint:disable: quotemark
+  // tslint:disable: object-literal-key-quotes
   "meta": {
     "page": 1,
     "resources_per_page": 10,

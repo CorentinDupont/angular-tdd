@@ -965,8 +965,8 @@
 							"left": 186,
 							"top": 368,
 							"width": 119,
-							"height": 55,
-							"text": "/authors/:id\n\nAuthors service get by id "
+							"height": 81,
+							"text": "/authors/:id\n\nAuthors service get by id included photos, books"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -982,7 +982,7 @@
 								"$ref": "AAAAAAFwHw5Z27VP950="
 							},
 							"lineStyle": 1,
-							"points": "270:367;299:334"
+							"points": "276:367;301:334"
 						},
 						{
 							"_type": "UMLActionView",
@@ -1093,11 +1093,11 @@
 								"$ref": "AAAAAAFwHwhWBrPaDfA="
 							},
 							"font": "Arial;13;0",
-							"left": 194,
+							"left": 166,
 							"top": 98,
-							"width": 70,
-							"height": 40,
-							"text": "/authors\n"
+							"width": 117,
+							"height": 66,
+							"text": "/authors\nauthors service get all included photos"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -1113,7 +1113,7 @@
 								"$ref": "AAAAAAFwHxT5C7XT0Ug="
 							},
 							"lineStyle": 1,
-							"points": "250:138;295:181"
+							"points": "268:164;290:181"
 						}
 					]
 				}
