@@ -7,6 +7,9 @@ import { AuthorsService } from '../authors.service';
 import { By } from '@angular/platform-browser';
 import { authors } from './authors.mock';
 import { AuthorComponent } from '../author/author.component';
+import { ActivatedRoute } from '@angular/router';
+import { MockActivatedRoute } from '../../mocks/activated-routes';
+import { of } from 'rxjs';
 
 describe('AuthorsComponent', () => {
 
@@ -79,6 +82,11 @@ describe('AuthorsComponent', () => {
 describe('AuthorComponent', () => {
   let component: AuthorComponent;
   let fixture: ComponentFixture<AuthorComponent>;
+  let activeRoute: MockActivatedRoute;
+
+  beforeEach(() => {
+    activeRoute = new MockActivatedRoute();
+  });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -89,12 +97,20 @@ describe('AuthorComponent', () => {
           url: '//jsonapiplayground.reyesoft.com/v2/'
         }),
       ],
-      providers : [ AuthorsService]
+      providers : [
+        AuthorsService,
+        {
+          provide: ActivatedRoute, useValue: {
+            params: of({ id: '1' })
+          }
+        },
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
+    activeRoute.testParams = { id: 1 };
     fixture = TestBed.createComponent(AuthorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
