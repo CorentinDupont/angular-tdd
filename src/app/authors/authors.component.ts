@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DocumentCollection } from 'ngx-jsonapi';
 import { Author, AuthorsService } from '../authors.service';
-import { defer } from 'rxjs';
 
 @Component({
   selector: 'app-authors',
@@ -15,7 +14,6 @@ export class AuthorsComponent implements OnInit {
   public constructor(
     private authorsService: AuthorsService,
   ) {
-    
   }
 
   async ngOnInit() {

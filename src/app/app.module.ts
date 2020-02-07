@@ -9,11 +9,13 @@ import { NgxJsonapiModule } from 'ngx-jsonapi';
 import { AuthorsService } from './authors.service';
 import { BooksService } from './books.service';
 import { PhotosService } from './photos.service';
+import { AuthorComponent } from './author/author.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,

@@ -37,26 +37,34 @@ describe('AuthorsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('show all the authors', async( async () =>  {
-  //     await new Promise<any>((res, rej) => { setTimeout(res, 1000); });
-  //     fixture.detectChanges();
-  //     const authorElements = fixture.debugElement.queryAll(By.css('.author'));
-  //     expect(authorElements.length).toBeGreaterThan(3);
-  // }));
-
-  it('show all the authors pretender', (done) => {
-    server = new Pretender( function() {
-      this.get('//jsonapiplayground.reyesoft.com/v2/authors', request => {
-        return [200, {ContentType: 'application/json'}, JSON.stringify(authors)];
-      });
-    });
-
-    server.handledRequest = (verb, path, request) => {
+  it('show all the authors', async( async () =>  {
+      await new Promise<any>((res, rej) => { setTimeout(res, 1000); });
+      // spyOn(component, 'ngOnInit');
       fixture.detectChanges();
       const authorElements = fixture.debugElement.queryAll(By.css('.author'));
       expect(authorElements.length).toBeGreaterThan(3);
-      done();
-    };
+  }));
+
+  
+
+  // click on author in authors component (last one)
+  it('should navigate to the /authors/:id page', () => {
+
   });
+
+  // it('show all the authors pretender', (done) => {
+  //   server = new Pretender( function() {
+  //     this.get('//jsonapiplayground.reyesoft.com/v2/authors', request => {
+  //       return [200, {ContentType: 'application/json'}, JSON.stringify(authors)];
+  //     });
+  //   });
+
+  //   server.handledRequest = (verb, path, request) => {
+  //     fixture.detectChanges();
+  //     const authorElements = fixture.debugElement.queryAll(By.css('.author'));
+  //     expect(authorElements.length).toBeGreaterThan(3);
+  //     done();
+  //   };
+  // });
 
 });
